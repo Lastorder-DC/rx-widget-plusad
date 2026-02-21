@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.2">
+	<title xml:lang="ko">한줄광고 출력 위젯 (plusad widget)</title>
+	<description xml:lang="ko">한줄광고 모듈에 등록된 광고를 전광판 형태로 출력하는 위젯입니다.</description>
+	<version>0.6</version>
+	<date>2013-12-26</date>
+	<author email_address="samswnlee@naver.com" link="http://xecenter.com">
+		<name xml:lang="ko">쿡래빗</name>
+	</author>
+	<extra_vars>
+		<var id="name">
+			<type>text</type>
+			<name xml:lang="ko">모듈 이름</name>
+			<description xml:lang="ko">한줄광고모듈의 이름을 입력해주세요
+			</description>
+		</var>
+		<var id="content_cut_size">
+			<type>text</type>
+			<name xml:lang="ko">광고 제목 제한</name>
+			<description xml:lang="ko">광고 내용의 길이를 제한합니다.(미입력시 20)
+			</description>
+		</var>
+		<var id="ad_point_use">
+			<type>select</type>
+			<name xml:lang="ko">광고사인 표시</name>
+			<options>
+				<value>yes</value>
+				<name xml:lang="ko">표시함</name>
+			</options>
+			<options>
+				<value>no</value>
+				<name xml:lang="ko">표시 안함</name>
+			</options>
+		</var>
+		<var id="nick_name">
+			<type>select</type>
+			<name xml:lang="ko">닉네임 출력여부</name>
+			<options>
+				<value>yes</value>
+				<name xml:lang="ko">표시함</name>
+			</options>
+			<options>
+				<value>no</value>
+				<name xml:lang="ko">표시 안함</name>
+			</options>
+		</var>
+		<var id="link_type">
+			<type>select</type>
+			<name xml:lang="ko">링크 연결 방식</name>
+			<options>
+				<value>new</value>
+				<name xml:lang="ko">새창연결</name>
+			</options>
+			<options>
+				<value>direct</value>
+				<name xml:lang="ko">바로연결</name>
+			</options>
+		</var>
+		<var id="scroll_speed">
+			<type>text</type>
+			<name xml:lang="ko">스크롤 속도</name>
+			<description xml:lang="ko">스크롤 되는 속도를 지정할 수 있습니다. 높을수록 빠릅니다. (미입력시 50)</description>
+		</var>
+		<var id="scroll_delay">
+			<type>text</type>
+			<name xml:lang="ko">스크롤 간격</name>
+			<description xml:lang="ko">광고와 광고 사이의 스크롤 간격을 지정할 수 있습니다. 1000 = 1초 입니다. (미입력시 1000)</description>
+		</var>	
+	</extra_vars>
+</widget>

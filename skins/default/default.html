@@ -1,0 +1,93 @@
+<!--// 컬러셋 로드-->
+<!--@if($colorset=="default")--> 
+	<load target="css/default.css" />
+<!--@elseif($colorset=="white")-->
+	<load target="css/white.css" />
+<!--@end-->
+
+<div id="plusad_widget_wrap">
+	<div class="plusad_point" cond="$widget_info->ad_point_use == 'yes'"><a href="{getUrl('','mid',$widget_info->name,'act','dispPlusadlist')}" title="광고를 등록하세요">AD</a></div>
+	<ul id="plusad_widget">	
+		<!--@if(!$ad_list)-->
+			<li>
+				<a style="font-weight:bold; color:red;" href="{getUrl('','mid',$widget_info->name,'act','dispPlusadlist')}">진행중인 광고가 없습니다. 광고를 등록해주세요</a>
+			</li>
+		<!--@end-->
+		{@shuffle($ad_list)} <!--//랜덤 출력-->
+		<!--@foreach($ad_list as $no => $ad)-->
+			<li>
+				<a <!--@if($ad->ad_url)-->href="{$ad->ad_url}" target="_blank"|cond="$widget_info->link_type == 'new'" <!--@end--> <!--@if($ad->color == 'red')-->style="color:tomato;"<!--@end--><!--@if($ad->color == 'green')-->style="color:lightseagreen;"<!--@end--><!--@if($ad->color == 'blue')-->style="color:dodgerblue;"<!--@end-->>
+					<!--@if($ad->bold == 'yes')--><b>{cut_str($ad->ad_content,$widget_info->content_cut_size)}</b><!--@else-->{cut_str($ad->ad_content,$widget_info->content_cut_size)}<!--@end-->
+				</a>
+				<span class="nick_name_color" cond="$widget_info->nick_name == 'yes'"> [{$ad->nick_name}]</span>
+			</li>
+		<!--@end-->
+	</ul>
+</div>
+
+
+
+ <!--//롤링함수-->
+<script type="text/javascript">
+jQuery(function($){
+
+	
+	//함수 호출
+	$(function(){
+		
+		//마우스 오버시 중지
+		move_stop = 1; //변수생성
+		$('#plusad_widget_wrap').mouseenter(function(){
+			move_stop = 0; //오버시 중지
+		}).mouseleave(function(){
+			move_stop = 1; 
+		});
+		
+		var ad_length = $('#plusad_widget li').size(); //광고 목록수 구함
+		if( ad_length > 1){ //목록 1개이상일때 롤링함수 호출
+			plusad_roll({$widget_info->scroll_speed},{$widget_info->scroll_delay},25,0);
+		}	
+	});
+	
+	
+	//롤링함수
+	function plusad_roll(speed, delay, ad_height, this_height){ //롤링속도, 롤링간격, 배너높이, 현재높이
+		
+		var ad = $('#plusad_widget');
+		var ad_list = $('#plusad_widget li:first');
+		
+		
+		if(move_stop) this_height++; //마우스 오버시 중지
+		
+		if(this_height <= ad_height){
+			
+			//스크롤함
+			$(ad).css('top',-this_height);
+			
+			//함수호출 (스크롤)
+			setTimeout(function(){
+				plusad_roll(speed, delay, ad_height, this_height);
+			},speed);
+		}else{
+		
+			//스크롤된 리스트 맨뒤로 이동
+			$(ad_list).appendTo($(ad));
+			$(ad).css('top',0);
+			
+			//함수호출 (롤링)
+			setTimeout(function(){
+				plusad_roll(speed, delay, ad_height, 0);
+			},delay);
+			
+		}
+
+	}
+	
+
+});
+</script>
+
+
+<style type="text/css">
+<!--@if($widget_info->ad_point_use == 'yes')-->#plusad_widget{margin-left:30px;}<!--@end-->
+</style>

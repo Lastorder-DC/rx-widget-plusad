@@ -1,0 +1,10 @@
+#plusad_widget_wrap{position:absolute; overflow:hidden; max-width:calc(100% - 10px);}
+#plusad_widget_wrap .plusad_point{position:absolute; cursor:pointer;}
+#plusad_widget_wrap .plusad_point a{padding:2px 4px; font-size:11px; background:#409AD6; color:white; font-weight:bold; border-radius:5px; line-height:25px;}
+
+
+#plusad_widget{position:relative; height:25px; margin:0px; padding:0px; list-style:none;}
+#plusad_widget li a{line-height:25px; color: var(--color-gray-900); text-decoration: none; transition: ease .2s;}
+#plusad_widget li a:hover {color: var(--color-black); filter: brightness(1.5) saturate(1.5);}
+#plusad_widget .nick_name_color{color:#777;}
+

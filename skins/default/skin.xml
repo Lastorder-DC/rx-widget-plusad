@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+	<title xml:lang="ko">한줄광고 출력 위젯</title>
+	<description xml:lang="ko">한줄광고 모듈에 등록된 광고를 전광판 형태로 출력하는 위젯 스킨입니다.</description>
+	<version>0.1</version>
+	<date>2013-12-10</date>
+	<author email_address="samswnlee@naver.com" link="http://xecenter.com">
+		<name xml:lang="ko">쿡래빗</name>
+	</author>
+	<colorset>
+		<color name="default">
+			<title xml:lang="ko">기본스킨(검은글씨)</title>
+		</color>
+		<color name="white">
+			<title xml:lang="ko">기본스킨(흰색글씨)</title>
+		</color>
+	</colorset>
+</skin>
