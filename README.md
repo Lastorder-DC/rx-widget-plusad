@@ -8,8 +8,9 @@
 
 ## 요구 사항
 
-- [라이믹스(Rhymix)](https://rhymix.org) 또는 XpressEngine(XE)
-- **한줄광고(plusad) 모듈**이 설치되어 있어야 합니다.
+- [라이믹스(Rhymix)](https://rhymix.org)
+  - 한줄광고 모듈이 XE를 지원하지 않으므로 XE 환경에서는 사용하실 수 없습니다.
+- [한줄광고(plusad) 모듈](https://github.com/Lastorder-DC/rx-module-plusad)이 설치되어 있어야 합니다.
 
 ## 설치 방법
 
