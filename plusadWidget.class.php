@@ -37,9 +37,7 @@ class plusadWidget extends WidgetHandler {
 		$output = $oPlusadModel->getadlist($args);
 		
 		//광고목록 템플릿에 보내기 위해 세팅
-		if (is_array($output->data) && count($output->data) > 1) {
-            shuffle($output->data);
-        } else {
+		if (!is_array($output->data)) {
             $output->data = [];
         }
 		Context::set('ad_list',$output->data);
