@@ -37,6 +37,9 @@ class plusadWidget extends WidgetHandler {
 		$output = $oPlusadModel->getadlist($args);
 		
 		//광고목록 템플릿에 보내기 위해 세팅
+		if (!is_array($output->data)) {
+            $output->data = [];
+        }
 		Context::set('ad_list',$output->data);
 		
 		// 템플릿의 스킨 경로를 지정 (skin, colorset에 따른 값을 설정)
